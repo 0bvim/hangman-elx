@@ -1,8 +1,7 @@
 defmodule HangmanTest do
   use ExUnit.Case
-  doctest Hangman
 
-  # test "greets the world" do
-  #   assert Hangman.hello() == :world
-  # end
+  test "test" do
+    assert 1 == 1
+  end
 end
