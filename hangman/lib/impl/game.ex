@@ -20,7 +20,10 @@ defmodule Hangman.Impl.Game do
   
   def init_game(word) do
     %__MODULE__{
-      letters: word |> String.codepoints
+      letters: word 
+      |> String.trim
+      |> String.downcase
+      |> String.codepoints
     }
   end
 end
