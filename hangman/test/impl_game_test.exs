@@ -4,9 +4,15 @@ defmodule HangmanImplGameTest do
 
   test "new game returns structure" do
     game = Game.init_game
-
     assert game.turns_left == 7
     assert game.game_state == :initializing
     assert length(game.letters) > 0
+  end
+  
+  test "new game returns correct word" do
+    game = Game.init_game("bat")
+    assert game.turns_left == 7
+    assert game.game_state == :initializing
+    assert game.letters == ["b", "a", "t"]
   end
 end
