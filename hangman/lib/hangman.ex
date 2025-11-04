@@ -1,7 +1,6 @@
 defmodule Hangman do
  
   alias Hangman.Impl.Game
-  alias Hangman.Type
   
   @opaque game :: Game.t
   @type tally :: Hangman.tally
