@@ -5,7 +5,7 @@ defmodule Hangman do
   @opaque game :: Game.t
   @type tally :: Hangman.tally
 
-  @spec new_game() :: game
+  @spec new_game() :: Hangman.Impl.Game.t()
   defdelegate new_game, to: Game
 
   @spec make_move(game, String.t) :: { game, tally }
