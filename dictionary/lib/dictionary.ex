@@ -1,16 +1,14 @@
 defmodule Dictionary do
-
   alias Dictionary.Impl.WordList
 
-  @opaque wordlist :: list(String.t())
+  @opaque t :: WordList.t()
 
-  @spec start() :: wordlist()
-  defdelegate start, to: WordList
+  @spec start() :: t
+  defdelegate start, to: WordList, as: :word_list
 
-  @spec random_word(binary()) :: binary()
+  @spec random_word(t) :: String.t()
   defdelegate random_word(words), to: WordList
 
   @spec random_word() :: String.t()
   defdelegate random_word, to: WordList
-
 end
