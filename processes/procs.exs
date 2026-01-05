@@ -4,11 +4,7 @@ defmodule Procs do
     IO.puts("Hello #{name}")
   end
 
-  @doc """
-  To use it, you can provide an anonymous function or
-  &Mod.fun/arity to capture a remote function, such as &Enum.map/2
-  """
-  def new_proc(mod, fun_name, values) do
-    spawn(mod, String.to_atom(fun_name), values)
+  def new_proc(module_name, fun_name, values) do
+    spawn(module_name, String.to_atom(fun_name), values)
   end
 end
