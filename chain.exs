@@ -48,6 +48,7 @@ end
 #       :timer.sleep(500)
 #       send({:chainer, state.next_node}, {:trigger, [node() | list]})
 #   end
-
+# 
+# IO.puts "node: #{node()} count: #{inspect(state.count - 1)}"
 #   message_loop(%{state | count: state.count - 1})
 # end
