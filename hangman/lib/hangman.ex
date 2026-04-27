@@ -1,18 +1,20 @@
 defmodule Hangman do
+  require Logger
   alias Hangman.Runtime.Server
 
-  @opaque game :: Server.t
+  @opaque game :: Server.t()
   @type tally :: Hangman.tally()
 
   @spec new_game() :: game
   def new_game do
-    { :ok, pid } = Hangman.Runtime.Application.start_game
+    Logger.info("Starting new game")
+    {:ok, pid} = Hangman.Runtime.Application.start_game()
     pid
   end
 
   @spec make_move(game, String.t()) :: tally
   def make_move(game, guess) do
-    GenServer.call(game, {:make_move, guess})    
+    GenServer.call(game, {:make_move, guess})
   end
 
   @spec tally(game) :: tally()

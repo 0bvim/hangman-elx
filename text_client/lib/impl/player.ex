@@ -12,7 +12,8 @@ defmodule TextClient.Impl.Player do
 
   @spec interact(state) :: :ok
 
-  def interact({_game, _tally = %{game_state: :won}}) do
+  def interact({_game, tally = %{game_state: :won}}) do
+    IO.puts "You got it right: #{tally.letters |> Enum.join()}"
     IO.puts("Congratulations. You Won!")
   end
 
