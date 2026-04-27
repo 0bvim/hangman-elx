@@ -81,6 +81,7 @@ defmodule B1Web do
       import Phoenix.HTML
       # Core UI components
       import B1Web.CoreComponents
+      import B1Web.MyComponents
 
       # Common modules used in templates
       alias Phoenix.LiveView.JS
