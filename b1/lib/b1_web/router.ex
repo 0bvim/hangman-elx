@@ -17,7 +17,7 @@ defmodule B1Web.Router do
   scope "/", B1Web do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", HangmanController, :home
   end
 
   # Other scopes may use custom stacks.
