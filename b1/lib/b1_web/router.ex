@@ -18,7 +18,8 @@ defmodule B1Web.Router do
     pipe_through :browser
 
     get "/", HangmanController, :home
-    get "/new", HangmanController, :new
+    post "/", HangmanController, :new
+    put "/", HangmanController, :update
   end
 
   # Other scopes may use custom stacks.

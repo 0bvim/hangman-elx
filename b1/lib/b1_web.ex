@@ -21,7 +21,7 @@ defmodule B1Web do
 
   def router do
     quote do
-      use Phoenix.Router, helpers: false
+      use Phoenix.Router, helpers: true
 
       # Import common connection and controller functions to use in pipelines
       import Plug.Conn
@@ -79,6 +79,8 @@ defmodule B1Web do
     quote do
       # HTML escaping functionality
       import Phoenix.HTML
+      # Form helpers (form_for, text_input, submit, etc.)
+      import Phoenix.HTML.Form
       # Core UI components
       import B1Web.CoreComponents
 

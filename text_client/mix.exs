@@ -20,7 +20,7 @@ defmodule TextClient.MixProject do
 
   defp deps do
     [
-      {:hangman, path: "../hangman"}
+      {:hangman, path: Path.expand("../hangman", __DIR__)}
     ]
   end
 end

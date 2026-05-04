@@ -8,9 +8,13 @@
 </p>
 
 <p>
-    Turns left: <%= @tally.letters |> Enum.join(" ") %>
+    Letters: <%= @tally.letters |> Enum.join(" ") %>
 </p>
 
-<form action="">
+<.form :let={f} for={%{}} as={:make_move} action={~p"/hangman"} method="put">
+  <.input field={f[:guess]} label="Your guess" />
 
-</form>
+  <.button type="submit">
+    Make next guess
+  </.button>
+</.form>
